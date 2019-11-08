@@ -50,3 +50,6 @@ export const RutasNoAutenticadas = createStackNavigator(
 );
 
 // export default createAppContainer(RutasNoAutenticadas);
+sdfssdfafsdfsdfafsfsdfsdfsdfasdfsdfsdfsdfa;
+
+;
