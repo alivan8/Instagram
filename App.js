@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {RutasNoAutenticadas} from './comonentes/comonentes/NoAutenticados/RutasNoAutenticadas';
 
@@ -13,9 +13,15 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={{flex: 1, backgroundColor: 'blue'}}>
+      <View style={styles.container}>
         <SignIn />
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+});
