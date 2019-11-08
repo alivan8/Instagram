@@ -43,13 +43,8 @@ export const RutasNoAutenticadas = createStackNavigator(
     },
   },
   {
-    navigationOptions: () => ({
-      title: 'sdfa',
-    }),
+    headerMode: 'none',
   },
 );
 
 // export default createAppContainer(RutasNoAutenticadas);
-sdfssdfafsdfsdfafsfsdfsdfsdfasdfsdfsdfsdfa;
-
-;

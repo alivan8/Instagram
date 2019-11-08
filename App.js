@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {RutasNoAutenticadas} from './comonentes/comonentes/NoAutenticados/RutasNoAutenticadas';
+import {RutasAutenticadas} from './comonentes/comonentes/Autenticados/RutasAutenticadas';
 
 const SignIn = createAppContainer(RutasNoAutenticadas);
+const Home = createAppContainer(RutasAutenticadas);
 
 export default class App extends Component {
   constructor(props) {
@@ -14,7 +16,8 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <SignIn />
+        {/**<SignIn /> */}
+        <Home />
       </View>
     );
   }
