@@ -3,12 +3,15 @@ import {Text, View} from 'react-native';
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
-const SignIn = () => <Text>componente Signin</Text>;
+const SignIn = () => <Text>componente Sssssssssssssignin</Text>;
 
-const RutasNoAutenticadas = createStackNavigator({
+export const RutasNoAutenticadas = createStackNavigator({
   SignIn: {
     screen: SignIn,
+    navigationOptions: {
+      title: 'Iniciar sesion',
+    },
   },
 });
 
-export default createAppContainer(RutasNoAutenticadas);
+// export default createAppContainer(RutasNoAutenticadas);
