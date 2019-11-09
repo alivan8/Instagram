@@ -1,11 +1,13 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text} from 'react-native';
 import {createAppContainer} from 'react-navigation';
+import {Provider} from 'react-redux';
 import {RutasNoAutenticadas} from './comonentes/comonentes/NoAutenticados/RutasNoAutenticadas';
 import {RutasAutenticadas} from './comonentes/comonentes/Autenticados/RutasAutenticadas';
+import Store from './Store/Store';
 
 const SignIn = createAppContainer(RutasNoAutenticadas);
-const Home = createAppContainer(RutasAutenticadas);
+const RutasAut = createAppContainer(RutasAutenticadas);
 
 export default class App extends Component {
   constructor(props) {
@@ -16,8 +18,9 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        {/**<SignIn /> */}
-        <Home />
+        <Provider store={Store}>
+          <SignIn />
+        </Provider>
       </View>
     );
   }
