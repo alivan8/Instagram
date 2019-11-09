@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {StyleSheet, View, Text, Button} from 'react-native';
 
 export default class Search extends Component {
   constructor(props) {
@@ -8,10 +8,25 @@ export default class Search extends Component {
   }
 
   render() {
+    const {navigation} = this.props;
     return (
-      <View>
+      <View style={styles.container}>
         <Text> Search </Text>
+        <Button
+          title="Publicacion"
+          onPress={() => {
+            navigation.navigate('Publicacion');
+          }}
+        />
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#2c3e58',
+  },
+});

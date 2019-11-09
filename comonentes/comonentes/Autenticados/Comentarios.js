@@ -1,7 +1,10 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Text, Button} from 'react-native';
 
-export default class Home extends Component {
+export default class Comentarios extends Component {
+  static navigationOptions = {
+    tabBarVisible: false,
+  };
   constructor(props) {
     super(props);
     this.state = {};
@@ -11,17 +14,11 @@ export default class Home extends Component {
     const {navigation} = this.props;
     return (
       <View style={styles.container}>
-        <Text> Home </Text>
+        <Text> Comentarios </Text>
         <Button
           title="Autor"
           onPress={() => {
             navigation.navigate('Autor');
-          }}
-        />
-        <Button
-          title="Comentarios"
-          onPress={() => {
-            navigation.navigate('Comentarios');
           }}
         />
       </View>
