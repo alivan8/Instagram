@@ -1,4 +1,5 @@
 import {createStore, conbineReducers, combineReducers} from 'redux';
+import {reducer as form} from 'redux-form';
 
 const reducerPruebas = (state = [], action) => {
   switch (action.type) {
@@ -9,9 +10,10 @@ const reducerPruebas = (state = [], action) => {
       return state;
   }
 };
-
+//a
 const reducers = combineReducers({
   reducerPruebas,
+  form,
 });
 
 const store = createStore(reducers);

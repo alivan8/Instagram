@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import {StyleSheet, Button, View, Text} from 'react-native';
+import {StyleSheet, Button, View, Text, TextInput} from 'react-native';
 
 import {connect} from 'react-redux';
+import SignUpForm from './Formas/SignUpForm';
 
 class SignUp extends Component {
   constructor(props) {
@@ -15,6 +16,8 @@ class SignUp extends Component {
     return (
       <View style={styles.container}>
         <Text> SignUp </Text>
+        <SignUpForm />
+        <TextInput placeholder="correo@coreo.com" />
         <Button title="Aumentar" onPress={this.props.aumentar} />
         <Button
           title="SignUp"
@@ -31,7 +34,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#2c3e58',
+    backgroundColor: '#fff',
   },
 });
 
