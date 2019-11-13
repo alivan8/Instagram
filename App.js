@@ -5,7 +5,9 @@ import {Provider} from 'react-redux';
 import {RutasNoAutenticadas} from './comonentes/comonentes/NoAutenticados/RutasNoAutenticadas';
 import {RutasAutenticadas} from './comonentes/comonentes/Autenticados/RutasAutenticadas';
 import Store from './Store/Store';
+import Seleccion from './Seleccion';
 
+console.disableYellowBox = ['Remote debugger'];
 const SignIn = createAppContainer(RutasNoAutenticadas);
 const RutasAut = createAppContainer(RutasAutenticadas);
 
@@ -19,7 +21,8 @@ export default class App extends Component {
     return (
       <View style={styles.container}>
         <Provider store={Store}>
-          <SignIn />
+          {/**<SignIn /> */}
+          <Seleccion />
         </Provider>
       </View>
     );

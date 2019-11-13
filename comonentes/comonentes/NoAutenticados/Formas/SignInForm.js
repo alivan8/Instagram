@@ -4,8 +4,8 @@ import {Field, reduxForm} from 'redux-form';
 
 //onchange  =
 const fieldNombre = props => {
-  return (
-    <View style={styles.inputText}>
+ return (
+    <View style={styles.textInput}>
       <TextInput
         placeholder={props.ph}
         onChangeText={props.input.onChange}
@@ -22,6 +22,7 @@ const fieldNombre = props => {
         onBlur={props.input.onBlur}
       />
       <View style={styles.linea} />
+
       {props.meta.touched && props.meta.error && (
         <Text style={styles.errors}>{props.meta.error}</Text>
       )}
@@ -32,13 +33,6 @@ const fieldNombre = props => {
 const validate = values => {
   const errors = {};
 
-  if (!values.nombre) {
-    errors.nombre = 'requerido';
-  } else if (values.nombre.length < 5) {
-    errors.nombre = 'deben ser al menos 5 caracteres';
-  } else if (values.nombre.length > 10) {
-    errors.nombre = 'debe ser menor de 10 caracteres';
-  }
   if (!values.correo) {
     errors.correo = 'requerido';
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9._]+\.[A-Z]{2,4}$/i.test(values.correo)) {
@@ -50,43 +44,36 @@ const validate = values => {
   } else if (values.password.length < 5) {
     errors.password = 'se requiere al menos 5 caracteres';
   }
-  if (!values.confirmacion) {
-    errors.confirmacion = 'requerido';
-  } else if (values.password !== values.confirmacion) {
-    errors.confirmacion = 'las contraseñas deben coincidir';
-  }
 
   return errors;
 };
 
-const SignUpForm = props => {
+const SignInForm = props => {
   return (
     <View>
-      <Field name="nombre" component={fieldNombre} ph="nombre" />
       <Field name="correo" component={fieldNombre} ph="correo" />
       <Field name="password" component={fieldNombre} ph="******" />
-      <Field name="confirmacion" component={fieldNombre} ph="******" />
-
-      <Button title="Registrar" onPress={props.handleSubmit(props.registro)} />
+      <Button title="Sign In" onPress={props.handleSubmit(props.login)} />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  inputText: {
-    marginBottom: 10,
-  },
   linea: {
     backgroundColor: '#DCDCDC',
     height: 2,
+  },
+  textinput: {
+    marginBottom: 15,
   },
   errors: {
     color: '#FF0000',
   },
 });
+
 export default reduxForm({
-  form: 'SignUpForm',
+  form: 'SignInForm',
   validate,
-})(SignUpForm);
+})(SignInForm);
 
 //reduxForm  = pasa las propiedades a SingUpform para que puedas usarlas
